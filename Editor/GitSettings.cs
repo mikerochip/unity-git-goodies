@@ -162,7 +162,8 @@ namespace MikeSchweitzer.Git.Editor
 
             // need to call this AFTER installing unity event hooks or else async tasks can lock
             // up the editor
-            RefreshLocksImpl();
+            if (CanRefreshLocks)
+                RefreshLocksImpl();
         }
         #endregion
 
